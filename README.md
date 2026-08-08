@@ -4,11 +4,13 @@
 
 ## Plugins
 
+Browse and test all 59 plugins live at [anouar-bm.github.io/wam-plugins](https://anouar-bm.github.io/wam-plugins/).
+
 ### Featured
 
-| Plugin | index.js | GUI test page |
-|---|---|---|
-| Pro54 — Prophet-5-style synth (dual osc, resonant filter, LFO, poly-mod, 73 params, ~140 factory presets) | [`Pro54/index.js`](https://anouar-bm.github.io/wam-plugins/Pro54/index.js) | [`Pro54/index.html`](https://anouar-bm.github.io/wam-plugins/Pro54/index.html) |
+| Plugin | index.js |
+|---|---|
+| Pro54 — Prophet-5-style synth (dual osc, resonant filter, LFO, poly-mod, 73 params, ~140 factory presets) | [`community/Pro54/index.js`](https://anouar-bm.github.io/wam-plugins/community/Pro54/index.js) |
 
 Generated from [cmajor-lang/cmajor examples/patches/Pro54](https://github.com/cmajor-lang/cmajor/tree/main/examples/patches/Pro54) via `cmaj generate --target=wam`.
 
@@ -84,7 +86,7 @@ Full index with names, categories, and paths: [`community/plugins.json`](https:/
 Point your host at the `index.js` URL, e.g.:
 
 ```js
-const [pluginFactory] = await import("https://anouar-bm.github.io/wam-plugins/Pro54/index.js");
+const [pluginFactory] = await import("https://anouar-bm.github.io/wam-plugins/community/Pro54/index.js");
 const plugin = await pluginFactory.createInstance(hostGroupId, audioContext);
 
 // community plugin, e.g. burns-audio/distortion:

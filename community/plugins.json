@@ -14,8 +14,8 @@
       "Instrument",
       "Synthesizer"
     ],
-    "thumbnail": "../Pro54/thumbnail.png",
-    "path": "../Pro54/index.js"
+    "thumbnail": "Pro54/thumbnail.png",
+    "path": "Pro54/index.js"
   },
   {
     "identifier": "com.sequencerParty.audioInput",

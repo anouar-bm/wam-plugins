@@ -98,7 +98,9 @@
     // this test page just doesn't implement those host features.
     window.WAMExtensions = window.WAMExtensions || {};
 
-    const res = await fetch(new URL("plugins.json", window.location.href));
+    // Plugin paths in plugins.json are relative to community/ (that's where the mirror lives).
+    const COMMUNITY_BASE = new URL("community/", window.location.href);
+    const res = await fetch(new URL("plugins.json", COMMUNITY_BASE));
     const plugins = await res.json();
 
     const list = document.getElementById("list");
@@ -170,8 +172,6 @@
       document.querySelectorAll(".item.active").forEach(n => n.classList.remove("active"));
       el.classList.add("active");
       title.textContent = p.name;
-      // Resolve p.path (which may climb out of community/, e.g. Pro54's "../Pro54/index.js")
-      // against the repo root rather than string-concatenating it under community/.
       const repoPath = new URL(p.path, "https://x/community/").pathname.slice(1);
       githubUrl.value = `https://github.com/${GITHUB_REPO}/blob/main/${repoPath}`;
       urlRow.hidden = false;
@@ -186,7 +186,7 @@
         await ensureHost();
         if (audioContext.state === "suspended") await audioContext.resume();
 
-        const moduleUrl = new URL(p.path, window.location.href).href;
+        const moduleUrl = new URL(p.path, COMMUNITY_BASE).href;
         const { default: WamModule } = await import(/* @vite-ignore */ moduleUrl);
         const instance = await WamModule.createInstance(hostGroupId, audioContext);
         currentInstance = instance;
