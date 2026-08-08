@@ -79,10 +79,8 @@
     // dynamically swapped plugin.
     const WAM_SDK = "https://www.webaudiomodules.com/sdk/2.0.0-alpha.6/src/initializeWamHost.js";
     const PIANO_URL = "https://mainline.i3s.unice.fr/wam2/packages/simpleMidiKeyboard/index.js";
-    // Repo is private, so plain raw.githubusercontent.com / github.io links 404 for anyone
-    // without a token embedded in the request. github.com/.../blob/... works instead because
-    // it's authenticated via the viewer's logged-in browser session.
-    const GITHUB_REPO = "anouar-bm/wam-plugins";
+    const PAGES_BASE = "https://anouar-bm.github.io/wam-plugins/";
+    const DEFAULT_SAMPLE_URL = new URL("assets/samples/02-XYLO1.mp3", window.location.href).href;
     const urlRow = document.getElementById("urlRow");
     const githubUrl = document.getElementById("githubUrl");
     const copyUrlBtn = document.getElementById("copyUrlBtn");
@@ -120,6 +118,7 @@
     let player = null;
     let currentInstance = null;
     let pianoConnectedTo = null; // instanceId currently receiving events from the piano
+    const instanceCache = new Map(); // p.path -> instance; AudioWorklet processor names can only be registerProcessor'd once per AudioContext, so reselecting a plugin must reuse its instance instead of re-importing/re-creating it
 
     async function ensureHost() {
       if (audioContext) return;
@@ -172,8 +171,7 @@
       document.querySelectorAll(".item.active").forEach(n => n.classList.remove("active"));
       el.classList.add("active");
       title.textContent = p.name;
-      const repoPath = new URL(p.path, "https://x/community/").pathname.slice(1);
-      githubUrl.value = `https://github.com/${GITHUB_REPO}/blob/main/${repoPath}`;
+      githubUrl.value = new URL(p.path, new URL("community/", PAGES_BASE)).href;
       urlRow.hidden = false;
       status.textContent = "Loading…";
       guiHost.innerHTML = "";
@@ -181,14 +179,19 @@
       piano.hidden = true;
       fileRow.innerHTML = "";
       currentInstance = null;
+      if (player) player.pause();
 
       try {
         await ensureHost();
         if (audioContext.state === "suspended") await audioContext.resume();
 
-        const moduleUrl = new URL(p.path, COMMUNITY_BASE).href;
-        const { default: WamModule } = await import(/* @vite-ignore */ moduleUrl);
-        const instance = await WamModule.createInstance(hostGroupId, audioContext);
+        let instance = instanceCache.get(p.path);
+        if (!instance) {
+          const moduleUrl = new URL(p.path, COMMUNITY_BASE).href;
+          const { default: WamModule } = await import(/* @vite-ignore */ moduleUrl);
+          instance = await WamModule.createInstance(hostGroupId, audioContext);
+          instanceCache.set(p.path, instance);
+        }
         currentInstance = instance;
 
         const isInstrument = (p.category || []).includes("Instrument");
@@ -202,11 +205,13 @@
           pianoConnectedTo = instance.audioNode.instanceId;
           piano.hidden = false;
         } else {
-          hint.textContent = "Effect — choose an audio file, then press play to route it through the plugin.";
+          hint.textContent = "Effect — plays a default loop through it; choose your own audio file to swap it out.";
+
           player = document.createElement("audio");
           player.controls = true;
           player.loop = true;
           player.crossOrigin = "anonymous";
+          player.src = DEFAULT_SAMPLE_URL;
           const fileInput = document.createElement("input");
           fileInput.type = "file";
           fileInput.accept = "audio/*";
@@ -216,10 +221,14 @@
             player.src = URL.createObjectURL(file);
             playerSourceNode = audioContext.createMediaElementSource(player);
             playerSourceNode.connect(instance.audioNode);
+            player.play();
           });
           fileRow.appendChild(fileInput);
           fileRow.appendChild(player);
           instance.audioNode.connect(audioContext.destination);
+          playerSourceNode = audioContext.createMediaElementSource(player);
+          playerSourceNode.connect(instance.audioNode);
+          player.play().catch(() => {}); // autoplay can be blocked; the visible <audio> controls still let the user hit play
         }
         controls.hidden = false;
 
