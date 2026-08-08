@@ -57,7 +57,7 @@
   </div>
   <div id="main">
     <h2 id="title">Select a plugin</h2>
-    <div id="subtitle">58 community WAM plugins — click one to load it live.</div>
+    <div id="subtitle">Loading plugin list…</div>
     <div id="urlRow" hidden>
       <input id="githubUrl" type="text" readonly>
       <button id="copyUrlBtn" type="button">Copy</button>
@@ -102,6 +102,7 @@
     const plugins = await res.json();
 
     const list = document.getElementById("list");
+    const subtitle = document.getElementById("subtitle");
     const search = document.getElementById("search");
     const title = document.getElementById("title");
     const status = document.getElementById("status");
@@ -169,7 +170,10 @@
       document.querySelectorAll(".item.active").forEach(n => n.classList.remove("active"));
       el.classList.add("active");
       title.textContent = p.name;
-      githubUrl.value = `https://github.com/${GITHUB_REPO}/blob/main/community/${p.path}`;
+      // Resolve p.path (which may climb out of community/, e.g. Pro54's "../Pro54/index.js")
+      // against the repo root rather than string-concatenating it under community/.
+      const repoPath = new URL(p.path, "https://x/community/").pathname.slice(1);
+      githubUrl.value = `https://github.com/${GITHUB_REPO}/blob/main/${repoPath}`;
       urlRow.hidden = false;
       status.textContent = "Loading…";
       guiHost.innerHTML = "";
@@ -237,6 +241,7 @@
       ));
     });
 
+    subtitle.textContent = `${plugins.length} WAM plugins — click one to load it live.`;
     render(plugins);
   </script>
 </body>
