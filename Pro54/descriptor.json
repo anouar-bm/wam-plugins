@@ -1,0 +1,16 @@
+{
+    "identifier": "dev.cmajor.examples.pro54",
+    "name": "Pro54",
+    "vendor": "Cmajor",
+    "description": "A faithful Cmajor port of the classic Native Instruments Pro-53 synth",
+    "version": "1.0",
+    "apiVersion": "2.0.0", 
+    "thumbnail": "thumbnail.png",
+    "keywords": [ "Cmajor" ],
+    "isInstrument": true,
+    "hasMidiInput": true,
+    "hasMidiOutput": false,
+    "hasAudioInput": true,
+    "hasAudioOutput": true,
+    "website": "https://github.com/cmajor-lang/cmajor/tree/main/examples/patches/Pro54"
+}
