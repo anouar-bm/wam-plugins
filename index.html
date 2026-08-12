@@ -75,6 +75,10 @@
       </div>
       <div id="piano" hidden></div>
     </div>
+    <div id="scopeRow" hidden style="padding:0 10px;">
+      <div id="scopeStats" style="font-size:11px;color:var(--muted);font-family:monospace;margin-bottom:2px;"></div>
+      <canvas id="scope" width="600" height="120" style="width:100%;height:120px;background:#0b0b0b;border-radius:4px;display:block;"></canvas>
+    </div>
     <div id="gui"></div>
   </div>
 
@@ -129,11 +133,71 @@
     let pianoConnectedTo = null; // instanceId currently receiving events from the piano
     const instanceCache = new Map(); // p.path -> instance; AudioWorklet processor names can only be registerProcessor'd once per AudioContext, so reselecting a plugin must reuse its instance instead of re-importing/re-creating it
 
+    // Output oscilloscope, same idea as faustide's own Scope.ts (readAnalyserFrame
+    // + requestAnimationFrame draw loop) but just the waveform + basic stats —
+    // no spectroscope/spectrogram modes, this is a sanity-check tap, not a full
+    // scope. Analyser is a passthrough node spliced before destination, doesn't
+    // alter the plugin's real audio routing.
+    let analyser = null;
+    const scopeCanvas = document.getElementById("scope");
+    const scopeCtx = scopeCanvas.getContext("2d");
+    const scopeStats = document.getElementById("scopeStats");
+    const scopeRow = document.getElementById("scopeRow");
+    let scopeBuf = null;
+    let scopeFrame = 0;
+    function drawScope() {
+      requestAnimationFrame(drawScope);
+      if (!analyser || scopeCanvas.offsetParent === null) return;
+      scopeFrame++;
+      if (scopeFrame % 3 !== 0) return; // throttle, same as faustide's Scope.draw
+      const width = scopeCanvas.clientWidth || 600;
+      const height = scopeCanvas.clientHeight || 120;
+      if (scopeCanvas.width !== width) scopeCanvas.width = width;
+      if (scopeCanvas.height !== height) scopeCanvas.height = height;
+      analyser.getFloatTimeDomainData(scopeBuf);
+
+      let rms = 0;
+      let peak = 0;
+      for (let i = 0; i < scopeBuf.length; i++) {
+        rms += scopeBuf[i] * scopeBuf[i];
+        peak = Math.max(peak, Math.abs(scopeBuf[i]));
+      }
+      rms = Math.sqrt(rms / scopeBuf.length);
+      // Zero-crossing frequency estimate — good enough for a sanity check on a
+      // roughly-periodic monophonic signal, not a real pitch detector.
+      let crossings = 0;
+      for (let i = 1; i < scopeBuf.length; i++) {
+        if (scopeBuf[i - 1] < 0 && scopeBuf[i] >= 0) crossings++;
+      }
+      const freqEstimate = crossings * audioContext.sampleRate / scopeBuf.length;
+
+      scopeStats.textContent = `peak ${peak.toFixed(3)}  rms ${rms.toFixed(3)}  ~${freqEstimate.toFixed(0)} Hz`;
+
+      scopeCtx.fillStyle = "#0b0b0b";
+      scopeCtx.fillRect(0, 0, width, height);
+      scopeCtx.strokeStyle = peak > 0.001 ? "#0f9d8a" : "#333";
+      scopeCtx.lineWidth = 1.5;
+      scopeCtx.beginPath();
+      for (let i = 0; i < scopeBuf.length; i++) {
+        const x = (i / scopeBuf.length) * width;
+        const y = height / 2 - scopeBuf[i] * (height / 2) * 0.9;
+        if (i === 0) scopeCtx.moveTo(x, y);
+        else scopeCtx.lineTo(x, y);
+      }
+      scopeCtx.stroke();
+    }
+    requestAnimationFrame(drawScope);
+
     async function ensureHost() {
       if (audioContext) return;
       audioContext = new (window.AudioContext || window.webkitAudioContext)();
       const { default: initializeWamHost } = await import(WAM_SDK);
       [hostGroupId] = await initializeWamHost(audioContext, "community-test-page");
+      analyser = audioContext.createAnalyser();
+      analyser.fftSize = 2048;
+      scopeBuf = new Float32Array(analyser.fftSize);
+      analyser.connect(audioContext.destination);
+      scopeRow.hidden = false;
     }
 
     function render(items) {
@@ -282,7 +346,7 @@
         const isInstrument = (p.category || []).includes("Instrument");
         if (isInstrument) {
           hint.textContent = "Instrument — pick a MIDI Input source below to play it.";
-          instance.audioNode.connect(audioContext.destination);
+          instance.audioNode.connect(analyser);
 
           midiInputRow.hidden = false;
           await selectMidiInput(midiInputSelect.value);
@@ -307,7 +371,7 @@
           });
           fileRow.appendChild(fileInput);
           fileRow.appendChild(player);
-          instance.audioNode.connect(audioContext.destination);
+          instance.audioNode.connect(analyser);
           playerSourceNode = audioContext.createMediaElementSource(player);
           playerSourceNode.connect(instance.audioNode);
           player.play().catch(() => {}); // autoplay can be blocked; the visible <audio> controls still let the user hit play
