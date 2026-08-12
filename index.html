@@ -66,7 +66,13 @@
     <div id="controls" hidden>
       <div id="hint"></div>
       <div id="fileRow"></div>
-      <div id="midiStatus" style="font-size:12px;color:var(--muted);margin-bottom:6px;"></div>
+      <div id="midiInputRow" hidden style="margin-bottom:6px;">
+        <label for="midiInputSelect" style="font-size:12px;color:var(--muted);margin-right:6px;">MIDI Input</label>
+        <select id="midiInputSelect" style="font-size:13px;padding:4px 6px;">
+          <option value="none">None</option>
+          <option value="piano" selected>On-screen Piano</option>
+        </select>
+      </div>
       <div id="piano" hidden></div>
     </div>
     <div id="gui"></div>
@@ -110,6 +116,8 @@
     const controls = document.getElementById("controls");
     const hint = document.getElementById("hint");
     const fileRow = document.getElementById("fileRow");
+    const midiInputRow = document.getElementById("midiInputRow");
+    const midiInputSelect = document.getElementById("midiInputSelect");
     const piano = document.getElementById("piano");
     const guiHost = document.getElementById("gui");
 
@@ -168,12 +176,14 @@
       return pianoInstance;
     }
 
-    // Real hardware MIDI keyboard (Web MIDI API), forwarded straight into whatever
-    // instrument is currently loaded via the standard host->WAM scheduleEvents path —
-    // independent of the on-screen piano above, both can drive the instrument at once.
-    const midiStatus = document.getElementById("midiStatus");
-    let hardwareMidiRequested = false;
-    function forwardHardwareMidi(bytes) {
+    // Exclusive MIDI source selection — mirrors faustide's own MidiController
+    // (src/ui/MidiController.ts): exactly one source drives the DSP at a time
+    // (None / on-screen keyboard / one hardware device), switching detaches the
+    // previous source first. Piano AND a hardware keyboard firing simultaneously
+    // was producing doubled/conflicting note events on the same instance.
+    let midiAccessObj = null;
+    let activeHardwareInput = null; // currently wired MIDIInput, if any
+    function forwardMidiBytes(bytes) {
       if (!currentInstance || !audioContext) return;
       currentInstance.audioNode.scheduleEvents({
         type: "wam-midi",
@@ -181,32 +191,62 @@
         data: { bytes },
       });
     }
-    async function initHardwareMidi() {
-      if (hardwareMidiRequested) return;
-      hardwareMidiRequested = true;
-      if (!navigator.requestMIDIAccess) {
-        midiStatus.textContent = "Hardware MIDI: not supported by this browser.";
-        return;
+    async function selectMidiInput(value) {
+      if (pianoConnectedTo) {
+        try { pianoInstance?.audioNode.disconnectEvents(pianoConnectedTo); } catch {}
+        pianoConnectedTo = null;
       }
+      if (activeHardwareInput) {
+        activeHardwareInput.onmidimessage = null;
+        activeHardwareInput = null;
+      }
+      piano.hidden = true;
+
+      if (value === "piano") {
+        const pianoPlugin = await getPianoInstance();
+        if (currentInstance) {
+          pianoPlugin.audioNode.connectEvents(currentInstance.audioNode.instanceId);
+          pianoConnectedTo = currentInstance.audioNode.instanceId;
+        }
+        piano.hidden = false;
+      } else if (value !== "none" && midiAccessObj) {
+        const input = midiAccessObj.inputs.get(value);
+        if (input) {
+          input.onmidimessage = (e) => forwardMidiBytes(e.data);
+          activeHardwareInput = input;
+        }
+      }
+    }
+    midiInputSelect.addEventListener("change", () => selectMidiInput(midiInputSelect.value));
+
+    let midiInputRequested = false;
+    async function initMidiInput() {
+      if (midiInputRequested) return;
+      midiInputRequested = true;
+      if (!navigator.requestMIDIAccess) return; // dropdown just stays None/Piano-only
       try {
-        const midiAccess = await navigator.requestMIDIAccess();
-        const wireInput = (input) => {
-          input.onmidimessage = (e) => forwardHardwareMidi(e.data);
+        midiAccessObj = await navigator.requestMIDIAccess();
+        const refreshOptions = () => {
+          Array.from(midiInputSelect.options).forEach((o) => {
+            if (o.value !== "none" && o.value !== "piano") o.remove();
+          });
+          midiAccessObj.inputs.forEach((input) => {
+            const opt = document.createElement("option");
+            opt.value = input.id;
+            opt.textContent = input.name;
+            midiInputSelect.appendChild(opt);
+          });
         };
-        const updateStatus = () => {
-          const names = Array.from(midiAccess.inputs.values()).map(i => i.name);
-          midiStatus.textContent = names.length
-            ? `Hardware MIDI: ${names.join(", ")}`
-            : "Hardware MIDI: no input devices connected.";
+        refreshOptions();
+        midiAccessObj.onstatechange = () => {
+          refreshOptions();
+          if (activeHardwareInput && !Array.from(midiAccessObj.inputs.values()).includes(activeHardwareInput)) {
+            midiInputSelect.value = "none";
+            selectMidiInput("none");
+          }
         };
-        midiAccess.inputs.forEach(wireInput);
-        updateStatus();
-        midiAccess.onstatechange = () => {
-          midiAccess.inputs.forEach(wireInput);
-          updateStatus();
-        };
-      } catch (err) {
-        midiStatus.textContent = "Hardware MIDI: access denied (" + (err?.message || err) + ").";
+      } catch {
+        // access denied — dropdown just won't list hardware devices
       }
     }
 
@@ -220,6 +260,7 @@
       guiHost.innerHTML = "";
       controls.hidden = true;
       piano.hidden = true;
+      midiInputRow.hidden = true;
       fileRow.innerHTML = "";
       currentInstance = null;
       if (player) player.pause();
@@ -227,7 +268,7 @@
       try {
         await ensureHost();
         if (audioContext.state === "suspended") await audioContext.resume();
-        initHardwareMidi();
+        initMidiInput();
 
         let instance = instanceCache.get(p.path);
         if (!instance) {
@@ -240,14 +281,11 @@
 
         const isInstrument = (p.category || []).includes("Instrument");
         if (isInstrument) {
-          hint.textContent = "Instrument — play it with the on-screen keyboard below.";
+          hint.textContent = "Instrument — pick a MIDI Input source below to play it.";
           instance.audioNode.connect(audioContext.destination);
 
-          const pianoPlugin = await getPianoInstance();
-          if (pianoConnectedTo) { try { pianoPlugin.audioNode.disconnectEvents(pianoConnectedTo); } catch {} }
-          pianoPlugin.audioNode.connectEvents(instance.audioNode.instanceId);
-          pianoConnectedTo = instance.audioNode.instanceId;
-          piano.hidden = false;
+          midiInputRow.hidden = false;
+          await selectMidiInput(midiInputSelect.value);
         } else {
           hint.textContent = "Effect — plays a default loop through it; choose your own audio file to swap it out.";
 
