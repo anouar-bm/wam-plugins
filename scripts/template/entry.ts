@@ -118,7 +118,10 @@ class FaustWamModule extends WebAudioModule<FaustCompositeAudioNode> {
 
     const paramMgrNode = await ParamMgrFactory.create(this, {
       internalParamsConfig: Object.fromEntries((faustNode as unknown as { parameters: Map<string, unknown> }).parameters),
-    });
+      // Mono DSPs without explicit [midi:key]/[midi:keyon]/[midi:keyoff] tags need
+      // this to get MIDI at all -- see ParamMgrProcessor.handleMidiConvention.
+      enableMidiConventionFallback: true,
+    } as any);
 
     const node = new FaustCompositeAudioNode(this.audioContext);
     node.setup(faustNode, paramMgrNode);

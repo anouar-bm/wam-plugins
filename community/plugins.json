@@ -662,7 +662,7 @@
     "name": "DualPitchShifter",
     "vendor": "Wimmics",
     "website": "Original web site with faust code by O.Larkin : https://www.rebeltech.org/patch-library/patch/DualPitchShifter. Authors: Michel Buffa for making it a WAM, Q. Beauchet for GUI improvements, original Faust Code : Oli Larkin",
-    "description": "Dual Pitch Shifter is a dual channel pitch shifter, based on Faust’s pitch_shifter.dsp by Grame. Pitch shifting is (intentionally) extremely basic and introduces significant delay based on window size.",
+    "description": "Dual Pitch Shifter is a dual channel pitch shifter, based on Faust\u2019s pitch_shifter.dsp by Grame. Pitch shifting is (intentionally) extremely basic and introduces significant delay based on window size.",
     "keywords": [
       "blipper"
     ],
@@ -966,7 +966,7 @@
     "name": "React Pedalboard",
     "vendor": "Wimmics",
     "website": "",
-    "description": "A WAM plugin written using React, that acts as a host for assembling other WAM plugins in effect chains. Author: Dorian Chapoulié.",
+    "description": "A WAM plugin written using React, that acts as a host for assembling other WAM plugins in effect chains. Author: Dorian Chapouli\u00e9.",
     "keywords": [
       "pedalboard"
     ],

@@ -91,6 +91,7 @@ const processor = (moduleId, paramsConfig) => {
 				internalParams,
 				groupId,
 				instanceId,
+				enableMidiConventionFallback,
 			} = options.processorOptions;
 			this.groupId = groupId;
 			this.moduleId = moduleId;
@@ -122,9 +123,13 @@ const processor = (moduleId, paramsConfig) => {
 			// we're on the mono engine, so replicate that convention here directly
 			// against the same paramsValues this processor already outputs as real
 			// AudioParam automation (same path setParamValue/GUI writes use).
-			this.midiFreqPaths = Object.keys(paramsConfig).filter((p) => p.endsWith('/freq'));
-			this.midiGainPaths = Object.keys(paramsConfig).filter((p) => p.endsWith('/gain'));
-			this.midiGatePaths = Object.keys(paramsConfig).filter((p) => p.endsWith('/gate'));
+			// Off by default -- poly DSPs already get real per-voice keyOn/keyOff from
+			// Faust's own poly engine, and this fallback firing there too would fight
+			// it (see enableMidiConventionFallback comment in ParamMgrFactory.js).
+			this.enableMidiConventionFallback = !!enableMidiConventionFallback;
+			this.midiFreqPaths = this.enableMidiConventionFallback ? Object.keys(paramsConfig).filter((p) => p.endsWith('/freq')) : [];
+			this.midiGainPaths = this.enableMidiConventionFallback ? Object.keys(paramsConfig).filter((p) => p.endsWith('/gain')) : [];
+			this.midiGatePaths = this.enableMidiConventionFallback ? Object.keys(paramsConfig).filter((p) => p.endsWith('/gate')) : [];
 
 			audioWorkletGlobalScope.webAudioModules.addWam(this);
 			if (!ModuleScope.paramMgrProcessors) ModuleScope.paramMgrProcessors = {};
@@ -247,6 +252,7 @@ const processor = (moduleId, paramsConfig) => {
 		 * @param {Uint8Array} bytes
 		 */
 		handleMidiConvention(bytes) {
+			if (!this.enableMidiConventionFallback) return;
 			const cmd = bytes[0] >> 4;
 			const data1 = bytes[1];
 			const data2 = bytes[2];

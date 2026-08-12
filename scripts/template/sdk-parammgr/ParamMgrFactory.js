@@ -41,6 +41,14 @@ export default class ParamMgrFactory {
 				groupId,
 				instanceId,
 				moduleId,
+				// Mono Faust DSPs without explicit [midi:key]/[midi:keyon]/[midi:keyoff]
+				// tags need ParamMgrProcessor's freq/gain/gate convention fallback to get
+				// MIDI at all (see ParamMgrProcessor.handleMidiConvention). Poly DSPs
+				// already get real per-voice keyOn/keyOff from Faust's own poly engine —
+				// the fallback firing there too would fight it (overwrites the exposed
+				// macro gain/freq/gate AudioParams with raw MIDI velocity on every note,
+                // clobbering whatever the user set). Opt-in only, off by default.
+				enableMidiConventionFallback: !!optionsIn.enableMidiConventionFallback,
 			},
 		};
 		const node = new ParamMgrNode(module, options);
