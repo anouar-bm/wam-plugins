@@ -662,7 +662,7 @@
     "name": "DualPitchShifter",
     "vendor": "Wimmics",
     "website": "Original web site with faust code by O.Larkin : https://www.rebeltech.org/patch-library/patch/DualPitchShifter. Authors: Michel Buffa for making it a WAM, Q. Beauchet for GUI improvements, original Faust Code : Oli Larkin",
-    "description": "Dual Pitch Shifter is a dual channel pitch shifter, based on Faust\u2019s pitch_shifter.dsp by Grame. Pitch shifting is (intentionally) extremely basic and introduces significant delay based on window size.",
+    "description": "Dual Pitch Shifter is a dual channel pitch shifter, based on Faust’s pitch_shifter.dsp by Grame. Pitch shifting is (intentionally) extremely basic and introduces significant delay based on window size.",
     "keywords": [
       "blipper"
     ],
@@ -966,7 +966,7 @@
     "name": "React Pedalboard",
     "vendor": "Wimmics",
     "website": "",
-    "description": "A WAM plugin written using React, that acts as a host for assembling other WAM plugins in effect chains. Author: Dorian Chapouli\u00e9.",
+    "description": "A WAM plugin written using React, that acts as a host for assembling other WAM plugins in effect chains. Author: Dorian Chapoulié.",
     "keywords": [
       "pedalboard"
     ],
@@ -1220,5 +1220,2929 @@
       "height": 458
     },
     "path": "wimmics/StereoEnhancer/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.clarinetmidi",
+    "name": "ClarinetMIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple MIDI-controllable clarinet physical model with physical parameters.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/clarinetmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.violinmidi",
+    "name": "ViolinMidi",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple MIDI-controllable violin physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/violinmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.foursourcestoocto",
+    "name": "fourSourcesToOcto",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/ambisonics",
+    "description": "Faust example (ambisonics/fourSourcesToOcto.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "ambisonics"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/foursourcestoocto/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.onesourcetostereo",
+    "name": "oneSourceToStereo",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/ambisonics",
+    "description": "Faust example (ambisonics/oneSourceToStereo.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "ambisonics"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/onesourcetostereo/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fft",
+    "name": "FFT",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/analysis",
+    "description": "Faust example (analysis/FFT.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "analysis"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fft/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.dbmeter",
+    "name": "dbmeter",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/analysis",
+    "description": "Faust example (analysis/dbmeter.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "analysis"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/dbmeter/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.spectrallevel",
+    "name": "spectralLevel",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/analysis",
+    "description": "Demonstrates mth_octave_spectral_level in a standalone GUI.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "analysis"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/spectrallevel/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.spectraltiltlab",
+    "name": "spectralTiltLab",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/analysis",
+    "description": "Faust example (analysis/spectralTiltLab.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "analysis"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/spectraltiltlab/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vumeter",
+    "name": "vumeter",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/analysis",
+    "description": "Faust example (analysis/vumeter.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "analysis"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vumeter/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.additivesynth",
+    "name": "AdditiveSynth",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/AdditiveSynth.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/additivesynth/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.additivesynthanalog",
+    "name": "AdditiveSynth_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/AdditiveSynth_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/additivesynth-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fmsynth2",
+    "name": "FMSynth2",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/FMSynth2.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fmsynth2/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fmsynth2analog",
+    "name": "FMSynth2_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/FMSynth2_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fmsynth2-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fmsynth2fx",
+    "name": "FMSynth2_FX",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/FMSynth2_FX.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fmsynth2-fx/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fmsynth2fxanalog",
+    "name": "FMSynth2_FX_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/FMSynth2_FX_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fmsynth2-fx-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fxchaine2",
+    "name": "FXChaine2",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/FXChaine2.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fxchaine2/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.graingenerator",
+    "name": "GrainGenerator",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/GrainGenerator.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/graingenerator/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.wavesynth",
+    "name": "WaveSynth",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/WaveSynth.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/wavesynth/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.wavesynthanalog",
+    "name": "WaveSynth_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/WaveSynth_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/wavesynth-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.wavesynthfx",
+    "name": "WaveSynth_FX",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/WaveSynth_FX.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/wavesynth-fx/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.wavesynthfxanalog",
+    "name": "WaveSynth_FX_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/WaveSynth_FX_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/wavesynth-fx-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.crossdelay2",
+    "name": "crossDelay2",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/crossDelay2.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/crossdelay2/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.granulator",
+    "name": "Granulator",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/granulator.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/granulator/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.repeater",
+    "name": "repeater",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/repeater.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/repeater/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simplefx",
+    "name": "simpleFX",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/simpleFX.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simplefx/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simplefxanalog",
+    "name": "simpleFX_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/simpleFX_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simplefx-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simplesynth",
+    "name": "simpleSynth",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/simpleSynth.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simplesynth/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simplesynthanalog",
+    "name": "simpleSynth_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/simpleSynth_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simplesynth-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simplesynthfx",
+    "name": "simpleSynth_FX",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/simpleSynth_FX.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simplesynth-fx/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simplesynthfxanalog",
+    "name": "simpleSynth_FX_Analog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/bela",
+    "description": "Faust example (bela/simpleSynth_FX_Analog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "bela"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simplesynth-fx-analog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.echo",
+    "name": "echo",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/delayEcho",
+    "description": "Faust example (delayEcho/echo.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "delayecho"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/echo/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.quadecho",
+    "name": "quadEcho",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/delayEcho",
+    "description": "Faust example (delayEcho/quadEcho.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "delayecho"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/quadecho/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.smoothdelay",
+    "name": "smoothDelay",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/delayEcho",
+    "description": "Faust example (delayEcho/smoothDelay.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "delayecho"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/smoothdelay/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.stereoecho",
+    "name": "stereoEcho",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/delayEcho",
+    "description": "Faust example (delayEcho/stereoEcho.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "delayecho"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/stereoecho/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.tapiir",
+    "name": "tapiir",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/delayEcho",
+    "description": "Faust example (delayEcho/tapiir.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "delayecho"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/tapiir/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.compressor",
+    "name": "compressor",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/dynamic",
+    "description": "Compressor demo application",
+    "keywords": [
+      "faust",
+      "faustide",
+      "dynamic"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/compressor/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.distortion",
+    "name": "distortion",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/dynamic",
+    "description": "Distortion demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "dynamic"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/distortion/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.gatecompressor",
+    "name": "gateCompressor",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/dynamic",
+    "description": "Faust example (dynamic/gateCompressor.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "dynamic"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/gatecompressor/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.noisegate",
+    "name": "noiseGate",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/dynamic",
+    "description": "Gate demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "dynamic"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/noisegate/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.volume",
+    "name": "volume",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/dynamic",
+    "description": "Faust example (dynamic/volume.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "dynamic"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/volume/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.apf",
+    "name": "APF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/APF.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/apf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.bpf",
+    "name": "BPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/BPF.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/bpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.dnn",
+    "name": "DNN",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/DNN.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/dnn/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.hpf",
+    "name": "HPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/HPF.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/hpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.lpf",
+    "name": "LPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/LPF.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/lpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.bandfilter",
+    "name": "bandFilter",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/bandFilter.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/bandfilter/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.crybaby",
+    "name": "cryBaby",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Application demonstrating the CryBaby wah pedal emulation",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/crybaby/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.diodeladder",
+    "name": "diodeLadder",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of diodeLadder",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/diodeladder/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.filterbank",
+    "name": "filterBank",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Graphic Equalizer consisting of a filter-bank driving a bank of faders",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/filterbank/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.graphiceqlab",
+    "name": "graphicEqLab",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Signal generators through a filter bank with spectrum analysis display",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/graphiceqlab/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.highshelf",
+    "name": "highShelf",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/highShelf.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/highshelf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.korg35hpf",
+    "name": "korg35HPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Korg 35 HPF",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/korg35hpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.korg35lpf",
+    "name": "korg35LPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Korg 35 LPF",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/korg35lpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.lfboost",
+    "name": "lfboost",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/lfBoost.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/lfboost/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.lowboost",
+    "name": "lowboost",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/lowBoost.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/lowboost/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.lowcut",
+    "name": "lowcut",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/lowCut.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/lowcut/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.lowshelf",
+    "name": "lowShelf",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/lowShelf.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/lowshelf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.mooghalfladder",
+    "name": "moogHalfLadder",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of moogHalfLadder",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/mooghalfladder/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.moogladder",
+    "name": "moogLadder",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of moogLadder",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/moogladder/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.moogvcf",
+    "name": "moogVCF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Exercise and compare three Moog VCF implementations",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/moogvcf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.notch",
+    "name": "notch",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/notch.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/notch/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.oberheimbsf",
+    "name": "oberheimBSF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Oberheim Band-Stop Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/oberheimbsf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.oberheimbpf",
+    "name": "oberheimBPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Oberheim Band-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/oberheimbpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.oberheimhpf",
+    "name": "oberheimHPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Oberheim High-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/oberheimhpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.oberheimlpf",
+    "name": "oberheimLPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Oberheim Low-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/oberheimlpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.parametriceqlab",
+    "name": "parametricEqLab",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstrate the Parametric Equalizer sections on test signals with spectrum analysis display",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/parametriceqlab/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.parametricequalizer",
+    "name": "parametricEqualizer",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Exercise and compare Parametric Equalizer sections on test signals",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/parametricequalizer/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.peaknotch",
+    "name": "peakNotch",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/peakNotch.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/peaknotch/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.peakingeq",
+    "name": "peakingEQ",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Faust example (filtering/peakingEQ.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/peakingeq/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.sallenkey2ndorderbpf",
+    "name": "sallenKey2ndOrderBPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Sallen-Key Second Order Band-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/sallenkey2ndorderbpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.sallenkey2ndorderhpf",
+    "name": "sallenKey2ndOrderHPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Sallen-Key Second Order Low-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/sallenkey2ndorderhpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.sallenkey2ndorderlpf",
+    "name": "sallenKey2ndOrderLPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Sallen-Key Second Order Low-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/sallenkey2ndorderlpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.sallenkeyonepolelpf",
+    "name": "sallenKeyOnePoleLPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Sallen-Key One Pole Low-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/sallenkeyonepolelpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.sallenkeyonepolehpf",
+    "name": "sallenKeyOnePoleHPF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstration of the Sallen-Key One Pole High-Pass Filter",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/sallenkeyonepolehpf/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.spectraltilt",
+    "name": "spectralTilt",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstrate the Spectral Tilt effect on test signals",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/spectraltilt/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vcfwahlab",
+    "name": "vcfWahLab",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstrate competing variable-lowpass-filter effects on test signals with spectrum analysis display",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vcfwahlab/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vocoder",
+    "name": "Vocoder",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Use example of the vocoder function where an impulse train is used as excitation.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vocoder/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.wahpedal",
+    "name": "wahPedal",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering",
+    "description": "Demonstrate the Fourth-Order Wah pedal (similar to the Moog VCF)",
+    "keywords": [
+      "faust",
+      "faustide",
+      "filtering"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/wahpedal/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.bubble",
+    "name": "bubble",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Production of a water drop bubble sound.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/bubble/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.complexrain",
+    "name": "complex_rain",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/complex_rain.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/complex-rain/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.door",
+    "name": "door",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/door.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/door/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fire",
+    "name": "fire",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/fire.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fire/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.insects",
+    "name": "insects",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/insects.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/insects/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.rain",
+    "name": "rain",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/rain.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/rain/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.thunder",
+    "name": "thunder",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/thunder.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/thunder/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.wind",
+    "name": "wind",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/wind.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/wind/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.windchimes",
+    "name": "windchimes",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/gameaudio",
+    "description": "Faust example (gameaudio/windchimes.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "gameaudio"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/windchimes/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.churchorgan",
+    "name": "churchOrgan",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Faust example (generator/churchOrgan.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/churchorgan/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.dx7",
+    "name": "dx7",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Faust example (generator/dx7.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/dx7/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.filterosc",
+    "name": "filterOSC",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Simple application demoing filter based oscillators.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/filterosc/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.noise",
+    "name": "Noise",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Faust example (generator/noise.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/noise/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.noisemetadata",
+    "name": "noiseMetadata",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Faust example (generator/noiseMetadata.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/noisemetadata/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.osc",
+    "name": "osc",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Faust example (generator/osc.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/osc/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.osci",
+    "name": "osci",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Faust example (generator/osci.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/osci/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.sawtoothlab",
+    "name": "sawtoothLab",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "An application demonstrating the different sawtooth oscillators of Faust.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/sawtoothlab/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.virtualanalog",
+    "name": "VirtualAnalog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Virtual analog oscillator demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/virtualanalog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.virtualanaloglab",
+    "name": "virtualAnalogLab",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/generator",
+    "description": "Faust example (generator/virtualAnalogLab.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "generator"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/virtualanaloglab/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.uitester",
+    "name": "UITester",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/UITester.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/uitester/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.autopan",
+    "name": "autopan",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/autopan.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/autopan/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.capture",
+    "name": "capture",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/capture.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/capture/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.drumkit",
+    "name": "drumkit",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/drumkit.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/drumkit/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.guitarix",
+    "name": "guitarix",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/guitarix.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/guitarix/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.matrix",
+    "name": "matrix",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/matrix.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/matrix/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.miditester",
+    "name": "midiTester",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/midiTester.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/miditester/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.statespace",
+    "name": "statespace",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/statespace.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/statespace/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.switcher",
+    "name": "switcher",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/switcher.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/switcher/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.tester",
+    "name": "tester",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/tester.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/tester/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.tester2",
+    "name": "tester2",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc",
+    "description": "Faust example (misc/tester2.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "misc"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/tester2/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.flanger",
+    "name": "flanger",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/phasing",
+    "description": "Flanger effect application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "phasing"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/flanger/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.phaser",
+    "name": "phaser",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/phasing",
+    "description": "Phaser demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "phasing"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/phaser/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.phaserflangerlab",
+    "name": "phaserFlangerLab",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/phasing",
+    "description": "Faust example (phasing/phaserFlangerLab.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "phasing"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/phaserflangerlab/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.brass",
+    "name": "brass",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/brass.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/brass/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.brassmidi",
+    "name": "BrassMIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple MIDI-controllable brass instrument physical model with physical parameters.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/brassmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.churchbell",
+    "name": "ChurchBell",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Generic church bell physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/churchbell/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.clarinet",
+    "name": "clarinet",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/clarinet.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/clarinet/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.djembemidi",
+    "name": "DjembeMIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple MIDI-controllable djembe physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/djembemidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.elecguitarmidi",
+    "name": "ElecGuitarMidi",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple electric guitar model without effect chain.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/elecguitarmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.englishchurchbell",
+    "name": "EnglishChurchBell",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "English church bell physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/englishchurchbell/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.flute",
+    "name": "Flute",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple flute physical model with physical parameters.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/flute/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.flutemidi",
+    "name": "FluteMIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple MIDI-controllable flute physical model with physical parameters.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/flutemidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.frenchchurchbell",
+    "name": "FrenchChurchBell",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "French church bell physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/frenchchurchbell/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.germanchurchbell",
+    "name": "GermanChurchBell",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "German church bell physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/germanchurchbell/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.guitarmidi",
+    "name": "GuitarMidi",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple acoustic guitar model with steel strings.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/guitarmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.karplusstrong",
+    "name": "KarplusStrong",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple call of the Karplus-Strong model for the Faust physical modeling library",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/karplusstrong/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.marimbamidi",
+    "name": "MarimbaMIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple MIDI-controllable marimba physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/marimbamidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.modularinterpinstrmidi",
+    "name": "ModularInterpInstrMidi",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "String instrument with a modular body",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/modularinterpinstrmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.nylonguitarmidi",
+    "name": "NylonGuitarMidi",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple acoustic guitar model with nylon strings.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/nylonguitarmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.russianchurchbell",
+    "name": "RussianChurchBell",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Russian church bell physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/russianchurchbell/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.standardchurchbell",
+    "name": "StandardChurchBell",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Standard church bell physical model.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/standardchurchbell/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.violin",
+    "name": "violin",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/violin.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/violin/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vocalbandpass",
+    "name": "Vocal BandPass",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple source-filter vocal synthesizer.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vocal-bandpass/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vocalbandpassmidi",
+    "name": "Vocal BandPass MIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "Simple MIDI-controllable source-filter vocal synthesizer.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vocal-bandpass-midi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vocalfof",
+    "name": "Vocal FOF",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "FOF vocal synthesizer.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vocal-fof/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vocalfofmidi",
+    "name": "Vocal FOF MIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling",
+    "description": "MIDI-controllable FOF vocal synthesizer.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "physicalmodeling"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vocal-fof-midi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.pitchshifter",
+    "name": "pitchShifter",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/pitchShifting",
+    "description": "Faust example (pitchShifting/pitchShifter.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "pitchshifting"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/pitchshifter/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.harmonicexciter",
+    "name": "harmonicExciter",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/psychoacoustic",
+    "description": "Psychoacoustic harmonic exciter, with GUI",
+    "keywords": [
+      "faust",
+      "faustide",
+      "psychoacoustic"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/harmonicexciter/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.dattorro",
+    "name": "dattorro",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Dattorro demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/dattorro/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fdnrev",
+    "name": "fdnRev",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "A feedback delay network reverb.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fdnrev/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.freeverb",
+    "name": "freeverb",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Freeverb demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/freeverb/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.greyhole",
+    "name": "greyhole",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Greyhole demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/greyhole/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.jprev",
+    "name": "jprev",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Jprev demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/jprev/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.reverbdesigner",
+    "name": "reverbDesigner",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Faust example (reverb/reverbDesigner.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/reverbdesigner/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.reverbtank",
+    "name": "reverbTank",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Faust example (reverb/reverbTank.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/reverbtank/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.reverbtester",
+    "name": "reverbTester",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Handy test inputs for reverberator demos below.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/reverbtester/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.springreverb",
+    "name": "springreverb",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Spring reverb demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/springreverb/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vitalrev",
+    "name": "vital_rev",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Vital demo application.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vital-rev/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.zitarev",
+    "name": "zitaRev",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Example GUI for `zita_rev1_stereo` (mostly following the Linux `zita-rev1` GUI).",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/zitarev/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.zitarevfdn",
+    "name": "zitaRevFDN",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/reverb",
+    "description": "Reverb demo application based on `zita_rev_fdn`.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "reverb"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/zitarevfdn/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.acguitar",
+    "name": "acGuitar",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/acGuitar.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/acguitar/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.elecguitareffect",
+    "name": "elecGuitarEffect",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/associatedEffects/elecGuitarEffect.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/elecguitareffect/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.myeffect",
+    "name": "myEffect",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/associatedEffects/myEffect.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/myeffect/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.reverb",
+    "name": "reverb",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/associatedEffects/reverb.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/reverb/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.bells",
+    "name": "bells",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/bells.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/bells/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.bowed",
+    "name": "bowed",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/bowed.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/bowed/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.crazyguiro",
+    "name": "crazyGuiro",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/crazyGuiro.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/crazyguiro/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.drums",
+    "name": "drums",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/drums.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/drums/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.dubdub",
+    "name": "dubDub",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/dubDub.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/dubdub/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.elecguitar",
+    "name": "elecGuitar",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/elecGuitar.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/elecguitar/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.fm",
+    "name": "fm",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/fm.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/fm/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.frog",
+    "name": "frog",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/frog.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/frog/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.harp",
+    "name": "harp",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/harp.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/harp/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.midionly",
+    "name": "midiOnly",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/midiOnly.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/midionly/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.multisynth",
+    "name": "multiSynth",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/multiSynth.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/multisynth/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.toy",
+    "name": "toy",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/toy.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/toy/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.trumpet",
+    "name": "trumpet",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/trumpet.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/trumpet/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.turenas",
+    "name": "turenas",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/turenas.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/turenas/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.violin2",
+    "name": "violin2",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/violin2.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/violin2/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.vocal",
+    "name": "vocal",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/smartKeyboard",
+    "description": "Faust example (smartKeyboard/vocal.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "smartkeyboard"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/vocal/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.panpot",
+    "name": "panpot",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/spat",
+    "description": "Faust example (spat/panpot.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "spat"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/panpot/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.spat",
+    "name": "spat",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/spat",
+    "description": "Faust example (spat/spat.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "spat"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/spat/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.spcap",
+    "name": "spcap",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/spat",
+    "description": "Faust example (spat/spcap.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "spat"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/spcap/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.wfs",
+    "name": "wfs",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/spat",
+    "description": "Faust example (spat/wfs.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "spat"
+    ],
+    "category": [
+      "Effect"
+    ],
+    "thumbnail": "",
+    "path": "faustide/wfs/index.js"
   }
 ]
