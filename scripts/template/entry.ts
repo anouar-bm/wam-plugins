@@ -82,6 +82,11 @@ class FaustWamModule extends WebAudioModule<FaustCompositeAudioNode> {
       vendor: __PLUGIN_VENDOR__,
       version: "1.0.0",
       apiVersion: "2.0.0",
+      // isInstrument/hasAudioInput are corrected in createAudioNode() once the
+      // real Faust node's channel count is known -- entry.ts's mono pipeline
+      // builds both instruments (violin, organ, ...) and effects (reverb,
+      // distortion chains, ...), so a fixed guess here would be wrong for one
+      // of the two. These are placeholders only.
       isInstrument: true,
       hasAudioInput: false,
       hasAudioOutput: true,
@@ -115,6 +120,16 @@ class FaustWamModule extends WebAudioModule<FaustCompositeAudioNode> {
       { moduleId, instanceId }
     )) as unknown as FaustAudioWorkletNode | null;
     if (!faustNode) throw new Error("Faust node creation failed");
+
+    // A DSP with 0 audio inputs is a sound generator (instrument); one with
+    // audio inputs is an effect processing an external signal. Cheap, always-
+    // available signal straight from the compiled DSP -- no per-plugin
+    // hardcoding needed.
+    const hasAudioInput = faustNode.numberOfInputs > 0;
+    Object.assign(this._descriptor, {
+      isInstrument: !hasAudioInput,
+      hasAudioInput,
+    });
 
     const paramMgrNode = await ParamMgrFactory.create(this, {
       internalParamsConfig: Object.fromEntries((faustNode as unknown as { parameters: Map<string, unknown> }).parameters),

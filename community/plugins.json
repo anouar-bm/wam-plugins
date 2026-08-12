@@ -662,7 +662,7 @@
     "name": "DualPitchShifter",
     "vendor": "Wimmics",
     "website": "Original web site with faust code by O.Larkin : https://www.rebeltech.org/patch-library/patch/DualPitchShifter. Authors: Michel Buffa for making it a WAM, Q. Beauchet for GUI improvements, original Faust Code : Oli Larkin",
-    "description": "Dual Pitch Shifter is a dual channel pitch shifter, based on Faust\u2019s pitch_shifter.dsp by Grame. Pitch shifting is (intentionally) extremely basic and introduces significant delay based on window size.",
+    "description": "Dual Pitch Shifter is a dual channel pitch shifter, based on Faust’s pitch_shifter.dsp by Grame. Pitch shifting is (intentionally) extremely basic and introduces significant delay based on window size.",
     "keywords": [
       "blipper"
     ],
@@ -966,7 +966,7 @@
     "name": "React Pedalboard",
     "vendor": "Wimmics",
     "website": "",
-    "description": "A WAM plugin written using React, that acts as a host for assembling other WAM plugins in effect chains. Author: Dorian Chapouli\u00e9.",
+    "description": "A WAM plugin written using React, that acts as a host for assembling other WAM plugins in effect chains. Author: Dorian Chapoulié.",
     "keywords": [
       "pedalboard"
     ],
@@ -1301,7 +1301,7 @@
       "analysis"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/fft/index.js"
@@ -1386,7 +1386,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/additivesynth/index.js"
@@ -1403,7 +1403,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/additivesynth-analog/index.js"
@@ -1420,7 +1420,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/fmsynth2/index.js"
@@ -1437,7 +1437,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/fmsynth2-analog/index.js"
@@ -1454,7 +1454,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/fmsynth2-fx/index.js"
@@ -1471,7 +1471,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/fmsynth2-fx-analog/index.js"
@@ -1522,7 +1522,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/wavesynth/index.js"
@@ -1539,7 +1539,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/wavesynth-analog/index.js"
@@ -1556,7 +1556,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/wavesynth-fx/index.js"
@@ -1573,7 +1573,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/wavesynth-fx-analog/index.js"
@@ -1675,7 +1675,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/simplesynth/index.js"
@@ -1692,7 +1692,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/simplesynth-analog/index.js"
@@ -1709,7 +1709,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/simplesynth-fx/index.js"
@@ -1726,7 +1726,7 @@
       "bela"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/simplesynth-fx-analog/index.js"
@@ -2032,7 +2032,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/diodeladder/index.js"
@@ -2100,7 +2100,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/korg35hpf/index.js"
@@ -2117,7 +2117,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/korg35lpf/index.js"
@@ -2202,7 +2202,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/mooghalfladder/index.js"
@@ -2219,7 +2219,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/moogladder/index.js"
@@ -2270,7 +2270,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/oberheimbsf/index.js"
@@ -2287,7 +2287,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/oberheimbpf/index.js"
@@ -2304,7 +2304,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/oberheimhpf/index.js"
@@ -2321,7 +2321,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/oberheimlpf/index.js"
@@ -2406,7 +2406,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/sallenkey2ndorderbpf/index.js"
@@ -2423,7 +2423,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/sallenkey2ndorderhpf/index.js"
@@ -2440,7 +2440,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/sallenkey2ndorderlpf/index.js"
@@ -2457,7 +2457,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/sallenkeyonepolelpf/index.js"
@@ -2474,7 +2474,7 @@
       "filtering"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/sallenkeyonepolehpf/index.js"
@@ -2559,7 +2559,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/bubble/index.js"
@@ -2576,7 +2576,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/complex-rain/index.js"
@@ -2593,7 +2593,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/door/index.js"
@@ -2610,7 +2610,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/fire/index.js"
@@ -2627,7 +2627,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/insects/index.js"
@@ -2644,7 +2644,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/rain/index.js"
@@ -2661,7 +2661,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/thunder/index.js"
@@ -2678,7 +2678,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/wind/index.js"
@@ -2695,7 +2695,7 @@
       "gameaudio"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/windchimes/index.js"
@@ -2712,7 +2712,7 @@
       "generator"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/churchorgan/index.js"
@@ -2729,7 +2729,7 @@
       "generator"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/dx7/index.js"
@@ -2746,7 +2746,7 @@
       "generator"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/filterosc/index.js"
@@ -2763,7 +2763,7 @@
       "generator"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/noise/index.js"
@@ -2780,7 +2780,7 @@
       "generator"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/noisemetadata/index.js"
@@ -2797,7 +2797,7 @@
       "generator"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/osc/index.js"
@@ -2814,7 +2814,7 @@
       "generator"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/osci/index.js"
@@ -2933,7 +2933,7 @@
       "misc"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/drumkit/index.js"
@@ -3035,7 +3035,7 @@
       "misc"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/tester/index.js"
@@ -3052,7 +3052,7 @@
       "misc"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/tester2/index.js"
@@ -3120,7 +3120,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/brass/index.js"
@@ -3154,7 +3154,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/churchbell/index.js"
@@ -3222,7 +3222,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/englishchurchbell/index.js"
@@ -3239,7 +3239,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/flute/index.js"
@@ -3273,7 +3273,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/frenchchurchbell/index.js"
@@ -3290,7 +3290,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/germanchurchbell/index.js"
@@ -3392,7 +3392,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/russianchurchbell/index.js"
@@ -3409,7 +3409,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/standardchurchbell/index.js"
@@ -3426,7 +3426,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/violin/index.js"
@@ -3443,7 +3443,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/vocal-bandpass/index.js"
@@ -3477,7 +3477,7 @@
       "physicalmodeling"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/vocal-fof/index.js"
@@ -3749,7 +3749,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/acguitar/index.js"
@@ -3817,7 +3817,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/bells/index.js"
@@ -3834,7 +3834,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/bowed/index.js"
@@ -3851,7 +3851,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/crazyguiro/index.js"
@@ -3868,7 +3868,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/drums/index.js"
@@ -3885,7 +3885,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/dubdub/index.js"
@@ -3902,7 +3902,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/elecguitar/index.js"
@@ -3919,7 +3919,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/fm/index.js"
@@ -3936,7 +3936,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/frog/index.js"
@@ -3953,7 +3953,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/harp/index.js"
@@ -3970,7 +3970,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/midionly/index.js"
@@ -3987,7 +3987,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/multisynth/index.js"
@@ -4004,7 +4004,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/toy/index.js"
@@ -4021,7 +4021,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/trumpet/index.js"
@@ -4038,7 +4038,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/turenas/index.js"
@@ -4055,7 +4055,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/violin2/index.js"
@@ -4072,7 +4072,7 @@
       "smartkeyboard"
     ],
     "category": [
-      "Effect"
+      "Instrument"
     ],
     "thumbnail": "",
     "path": "faustide/vocal/index.js"
@@ -4179,5 +4179,22 @@
     ],
     "thumbnail": "",
     "path": "faustide/simplepolysynth/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.guitareffectchain",
+    "name": "GuitarEffectChain",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom",
+    "description": "Distortion -> wah -> phaser -> compressor -> reverb chain, using demos.lib's dm.*_demo functions with a synthetic no.noise source (no live audio input needed to test), per dm.cubicnl_demo_test's own testing convention.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "custom"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/guitareffectchain/index.js"
   }
 ]

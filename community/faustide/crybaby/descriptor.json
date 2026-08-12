@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.crybaby",
+  "name": "cryBaby",
+  "vendor": "GRAME (faustide example)",
+  "description": "Application demonstrating the CryBaby wah pedal emulation",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "filtering"
+  ],
+  "isInstrument": false,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": true,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering"
+}

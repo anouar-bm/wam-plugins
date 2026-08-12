@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.tester2",
+  "name": "tester2",
+  "vendor": "GRAME (faustide example)",
+  "description": "Faust example (misc/tester2.dsp), compiled via faustwasm to a WAM2 module.",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "misc"
+  ],
+  "isInstrument": true,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": false,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/misc"
+}

@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.vocalfof",
+  "name": "Vocal FOF",
+  "vendor": "GRAME (faustide example)",
+  "description": "FOF vocal synthesizer.",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "physicalmodeling"
+  ],
+  "isInstrument": true,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": false,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling"
+}

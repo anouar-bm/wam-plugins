@@ -68,6 +68,12 @@ const { factory } = result;
 if (!factory.code) throw new Error("Compiler produced no WASM binary");
 const wasmBinary = Buffer.from(factory.code);
 const compiledJs = factory.json ?? "{}";
+// Faust's own compiled metadata JSON always carries the real channel counts
+// (`inputs`/`outputs`) -- ground truth for isInstrument/hasAudioInput, no
+// need to guess from the DSP filename or instantiate the node to find out.
+const { inputs: numInputs, outputs: numOutputs } = JSON.parse(compiledJs);
+const hasAudioInput = numInputs > 0;
+const isInstrument = !hasAudioInput;
 
 // --- 2. esbuild bundle the real-faust-ui entry (static template, no per-build patching) ---
 const { build } = await import("esbuild");
@@ -109,10 +115,31 @@ const newEntry = {
   website: `https://github.com/grame-cncm/faustide/tree/master/src/static/examples/${category}`,
   description: descMatch?.[1] ?? `Faust example (${exampleRelPath}), compiled via faustwasm to a WAM2 module.`,
   keywords: ["faust", "faustide", category.toLowerCase()],
-  category: /_MIDI|_ui_MIDI|midi_/i.test(dspCode) ? ["Instrument"] : ["Effect"],
+  category: isInstrument ? ["Instrument"] : ["Effect"],
   thumbnail: "",
   path: `faustide/${slug}/index.js`,
 };
+
+// Static descriptor.json, readable by a host without instantiating the
+// plugin -- mirrors community/Pro54/descriptor.json's shape, and the same
+// isInstrument/hasAudioInput ground truth entry.ts's _descriptor computes
+// live from faustNode.numberOfInputs.
+fs.writeFileSync(path.join(outDir, "descriptor.json"), JSON.stringify({
+  identifier,
+  name: displayName,
+  vendor: "GRAME (faustide example)",
+  description: newEntry.description,
+  version: "1.0.0",
+  apiVersion: "2.0.0",
+  thumbnail: "",
+  keywords: newEntry.keywords,
+  isInstrument,
+  hasMidiInput: true,
+  hasMidiOutput: false,
+  hasAudioInput,
+  hasAudioOutput: numOutputs > 0,
+  website: newEntry.website,
+}, null, 2));
 const existingIdx = plugins.findIndex((p) => p.identifier === identifier);
 if (existingIdx >= 0) plugins[existingIdx] = newEntry;
 else plugins.push(newEntry);

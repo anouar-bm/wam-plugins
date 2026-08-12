@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.guitareffectchain",
+  "name": "GuitarEffectChain",
+  "vendor": "GRAME (faustide example)",
+  "description": "Distortion -> wah -> phaser -> compressor -> reverb chain, using demos.lib's dm.*_demo functions with a synthetic no.noise source (no live audio input needed to test), per dm.cubicnl_demo_test's own testing convention.",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "custom"
+  ],
+  "isInstrument": true,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": false,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom"
+}

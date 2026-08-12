@@ -44,7 +44,6 @@
     #hint { color: var(--muted); font-size: 13px; margin-bottom: 8px; }
     #fileRow { display: flex; gap: 10px; align-items: center; }
 
-    #piano { margin-top: 10px; }
 
     #gui { border: 1px solid var(--border); border-radius: 8px; padding: 10px; background: var(--panel); min-height: 60px; }
     #gui:empty::before { content: "Plugin GUI will render here."; color: var(--muted); font-size: 13px; }
@@ -70,10 +69,9 @@
         <label for="midiInputSelect" style="font-size:12px;color:var(--muted);margin-right:6px;">MIDI Input</label>
         <select id="midiInputSelect" style="font-size:13px;padding:4px 6px;">
           <option value="none">None</option>
-          <option value="piano" selected>On-screen Piano</option>
+          <option value="keyboard" selected>Computer Keyboard (A W S E D F T G Y H U J K O L P ;, Z/X octave, C/V velocity)</option>
         </select>
       </div>
-      <div id="piano" hidden></div>
     </div>
     <div id="scopeRow" hidden style="padding:0 10px;">
       <div id="scopeStats" style="font-size:11px;color:var(--muted);font-family:monospace;margin-bottom:2px;"></div>
@@ -89,7 +87,6 @@
     // wam-host only reads its children once at connectedCallback and can't handle a
     // dynamically swapped plugin.
     const WAM_SDK = "https://www.webaudiomodules.com/sdk/2.0.0-alpha.6/src/initializeWamHost.js";
-    const PIANO_URL = "https://mainline.i3s.unice.fr/wam2/packages/simpleMidiKeyboard/index.js";
     const PAGES_BASE = "https://anouar-bm.github.io/wam-plugins/";
     const DEFAULT_SAMPLE_URL = new URL("assets/samples/02-XYLO1.mp3", window.location.href).href;
     const urlRow = document.getElementById("urlRow");
@@ -122,7 +119,6 @@
     const fileRow = document.getElementById("fileRow");
     const midiInputRow = document.getElementById("midiInputRow");
     const midiInputSelect = document.getElementById("midiInputSelect");
-    const piano = document.getElementById("piano");
     const guiHost = document.getElementById("gui");
 
     let audioContext = null;
@@ -130,7 +126,6 @@
     let playerSourceNode = null; // created once per <audio> element, reconnected across plugin loads
     let player = null;
     let currentInstance = null;
-    let pianoConnectedTo = null; // instanceId currently receiving events from the piano
     const instanceCache = new Map(); // p.path -> instance; AudioWorklet processor names can only be registerProcessor'd once per AudioContext, so reselecting a plugin must reuse its instance instead of re-importing/re-creating it
 
     // Output oscilloscope, same idea as faustide's own Scope.ts (readAnalyserFrame
@@ -227,24 +222,54 @@
       }
     }
 
-    // Drives instruments with a real WAM MIDI-keyboard plugin (drag/glissando, sustain,
-    // octave shift all handled by that plugin's own GUI) instead of a hand-rolled one —
-    // same pattern SamWAMS/Pro54 use: piano.audioNode.connectEvents(target.instanceId).
-    let pianoInstance = null;
-    async function getPianoInstance() {
-      if (pianoInstance) return pianoInstance;
-      const { default: Piano } = await import(/* @vite-ignore */ PIANO_URL);
-      pianoInstance = await Piano.createInstance(hostGroupId, audioContext);
-      const gui = await pianoInstance.createGui();
-      piano.appendChild(gui);
-      return pianoInstance;
+    // Computer-keyboard-as-MIDI, mirroring faustide's own Key2Midi
+    // (src/Key2Midi.ts) rather than depending on a remote WAM keyboard
+    // plugin (mainline.i3s.unice.fr/wam2/packages/simpleMidiKeyboard) —
+    // that host isn't always reachable and this needs no plugin loading at
+    // all, just raw [144, note, velocity]/[144, note, 0] bytes through the
+    // same forwardMidiBytes/scheduleEvents path hardware MIDI already uses.
+    // NOTE: a real WAM keyboard plugin (e.g. simpleMidiKeyboard, which we
+    // already have local source for) would still be preferable long-term —
+    // it connects as a first-class WAM node (piano.audioNode.connectEvents,
+    // same pattern SamWAMS/Pro54 use) instead of a hand-rolled bridge, and
+    // ships its own on-screen GUI (drag/glissando, sustain). Revisit if/when
+    // self-hosting that plugin locally is worth the extra bundle weight.
+    const KEY_MAP = { a: 0, w: 1, s: 2, e: 3, d: 4, f: 5, t: 6, g: 7, y: 8, h: 9, u: 10, j: 11, k: 12, o: 13, l: 14, p: 15, ";": 16 };
+    const key2midi = { offset: 36, velocity: 60, enabled: false, held: new Set() };
+    function key2midiNoteOn(note) {
+      if (key2midi.held.has(note)) return;
+      key2midi.held.add(note);
+      forwardMidiBytes([144, note, key2midi.velocity]);
     }
+    function key2midiNoteOff(note) {
+      key2midi.held.delete(note);
+      forwardMidiBytes([144, note, 0]);
+    }
+    function key2midiFlush() {
+      for (const note of key2midi.held) forwardMidiBytes([144, note, 0]);
+      key2midi.held.clear();
+    }
+    document.addEventListener("keydown", (e) => {
+      if (!key2midi.enabled || e.repeat) return;
+      if (e.target instanceof HTMLInputElement || e.target instanceof HTMLTextAreaElement) return;
+      const k = e.key.toLowerCase();
+      if (k === "z") { key2midiFlush(); key2midi.offset = Math.max(0, key2midi.offset - 12); return; }
+      if (k === "x") { key2midiFlush(); key2midi.offset = Math.min(120, key2midi.offset + 12); return; }
+      if (k === "c") { key2midi.velocity = Math.max(20, key2midi.velocity - 20); return; }
+      if (k === "v") { key2midi.velocity = Math.min(120, key2midi.velocity + 20); return; }
+      if (k in KEY_MAP) key2midiNoteOn(KEY_MAP[k] + key2midi.offset);
+    });
+    document.addEventListener("keyup", (e) => {
+      if (!key2midi.enabled) return;
+      const k = e.key.toLowerCase();
+      if (k in KEY_MAP) key2midiNoteOff(KEY_MAP[k] + key2midi.offset);
+    });
 
     // Exclusive MIDI source selection — mirrors faustide's own MidiController
     // (src/ui/MidiController.ts): exactly one source drives the DSP at a time
-    // (None / on-screen keyboard / one hardware device), switching detaches the
-    // previous source first. Piano AND a hardware keyboard firing simultaneously
-    // was producing doubled/conflicting note events on the same instance.
+    // (None / computer keyboard / one hardware device), switching detaches the
+    // previous source first. Multiple sources firing simultaneously was
+    // producing doubled/conflicting note events on the same instance.
     let midiAccessObj = null;
     let activeHardwareInput = null; // currently wired MIDIInput, if any
     function forwardMidiBytes(bytes) {
@@ -256,23 +281,15 @@
       });
     }
     async function selectMidiInput(value) {
-      if (pianoConnectedTo) {
-        try { pianoInstance?.audioNode.disconnectEvents(pianoConnectedTo); } catch {}
-        pianoConnectedTo = null;
-      }
+      key2midiFlush();
+      key2midi.enabled = false;
       if (activeHardwareInput) {
         activeHardwareInput.onmidimessage = null;
         activeHardwareInput = null;
       }
-      piano.hidden = true;
 
-      if (value === "piano") {
-        const pianoPlugin = await getPianoInstance();
-        if (currentInstance) {
-          pianoPlugin.audioNode.connectEvents(currentInstance.audioNode.instanceId);
-          pianoConnectedTo = currentInstance.audioNode.instanceId;
-        }
-        piano.hidden = false;
+      if (value === "keyboard") {
+        key2midi.enabled = true;
       } else if (value !== "none" && midiAccessObj) {
         const input = midiAccessObj.inputs.get(value);
         if (input) {
@@ -287,12 +304,12 @@
     async function initMidiInput() {
       if (midiInputRequested) return;
       midiInputRequested = true;
-      if (!navigator.requestMIDIAccess) return; // dropdown just stays None/Piano-only
+      if (!navigator.requestMIDIAccess) return; // dropdown just stays None/Keyboard-only
       try {
         midiAccessObj = await navigator.requestMIDIAccess();
         const refreshOptions = () => {
           Array.from(midiInputSelect.options).forEach((o) => {
-            if (o.value !== "none" && o.value !== "piano") o.remove();
+            if (o.value !== "none" && o.value !== "keyboard") o.remove();
           });
           midiAccessObj.inputs.forEach((input) => {
             const opt = document.createElement("option");
@@ -323,7 +340,6 @@
       status.textContent = "Loading…";
       guiHost.innerHTML = "";
       controls.hidden = true;
-      piano.hidden = true;
       midiInputRow.hidden = true;
       fileRow.innerHTML = "";
       currentInstance = null;
@@ -334,16 +350,28 @@
         if (audioContext.state === "suspended") await audioContext.resume();
         initMidiInput();
 
+        const moduleUrl = new URL(p.path, COMMUNITY_BASE).href;
         let instance = instanceCache.get(p.path);
         if (!instance) {
-          const moduleUrl = new URL(p.path, COMMUNITY_BASE).href;
           const { default: WamModule } = await import(/* @vite-ignore */ moduleUrl);
           instance = await WamModule.createInstance(hostGroupId, audioContext);
           instanceCache.set(p.path, instance);
         }
         currentInstance = instance;
 
-        const isInstrument = (p.category || []).includes("Instrument");
+        // Prefer the plugin's own descriptor.json (ground truth, generated
+        // from the compiled DSP's real channel count — see
+        // build-faustide-example.mjs) over plugins.json's category tag,
+        // which is only a build-time guess and isn't generated for every
+        // community-contributed plugin (fall back to it when there's no
+        // descriptor.json).
+        let isInstrument = (p.category || []).includes("Instrument");
+        try {
+          const descRes = await fetch(new URL("descriptor.json", moduleUrl));
+          if (descRes.ok) isInstrument = (await descRes.json()).isInstrument;
+        } catch {
+          // no descriptor.json for this plugin — keep the category-based guess
+        }
         if (isInstrument) {
           hint.textContent = "Instrument — pick a MIDI Input source below to play it.";
           instance.audioNode.connect(analyser);

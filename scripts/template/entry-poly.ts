@@ -77,11 +77,29 @@ class FaustCompositeAudioNode extends CompositeAudioNode {
   }
 
   getParamValue(name: string): number {
-    return this._wamNode.getParamValue(name);
+    // freq/gain/gate aren't tracked by paramMgr (excluded from the poly
+    // node's exposed .parameters — see setParamValue below), so read those
+    // straight off the real Faust node; paramMgr is authoritative for
+    // everything it does track (keeps host-automation state consistent).
+    return this._wamNode.parameters.has(name)
+      ? this._wamNode.getParamValue(name)
+      : this._output.getParamValue(name);
   }
 
   setParamValue(name: string, value: number): void {
-    return this._wamNode.setParamValue(name, value);
+    // paramMgr's internalParamsConfig is built from the poly node's
+    // .parameters map, which only exposes params outside the freq/gain/gate
+    // MIDI-polyphony convention (e.g. this DSP's ratio/feedback) — Faust's
+    // own poly engine intentionally keeps freq/gain/gate as private per-voice
+    // state with no AudioParam. Writes to those names are silently dropped
+    // by paramMgr and never reach the real DSP at all, unlike faustide's own
+    // GUI, which always writes directly to the Faust node's setParamValue —
+    // unconditional, no filtering — so this does the same here. Always
+    // writing to both keeps ratio/feedback's automation/GUI-poll state (via
+    // paramMgr) consistent with what freq/gain/gate need (a real write that
+    // reaches the DSP, so the next note-on's keyOn picks up the new value).
+    this._wamNode.setParamValue(name, value);
+    this._output.setParamValue(name, value);
   }
 }
 

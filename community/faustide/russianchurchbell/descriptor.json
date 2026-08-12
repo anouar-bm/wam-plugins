@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.russianchurchbell",
+  "name": "RussianChurchBell",
+  "vendor": "GRAME (faustide example)",
+  "description": "Russian church bell physical model.",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "physicalmodeling"
+  ],
+  "isInstrument": true,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": false,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/physicalModeling"
+}

@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.parametricequalizer",
+  "name": "parametricEqualizer",
+  "vendor": "GRAME (faustide example)",
+  "description": "Exercise and compare Parametric Equalizer sections on test signals",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "filtering"
+  ],
+  "isInstrument": false,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": true,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering"
+}

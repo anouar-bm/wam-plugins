@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.korg35hpf",
+  "name": "korg35HPF",
+  "vendor": "GRAME (faustide example)",
+  "description": "Demonstration of the Korg 35 HPF",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "filtering"
+  ],
+  "isInstrument": true,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": false,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering"
+}

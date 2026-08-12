@@ -133,4 +133,25 @@ else plugins.push(newEntry);
 fs.writeFileSync(plugsJsonPath, JSON.stringify(plugins, null, 2));
 console.log(`${existingIdx >= 0 ? "Updated" : "Added"} plugins.json entry: ${identifier}`);
 
+// Static descriptor.json, readable by a host without instantiating the
+// plugin -- mirrors community/Pro54/descriptor.json's shape. Poly builds in
+// this catalog are always instruments (freq/gain/gate voice convention, no
+// external audio input), unlike the mono pipeline which also builds effects.
+fs.writeFileSync(path.join(outDir, "descriptor.json"), JSON.stringify({
+  identifier,
+  name: displayName,
+  vendor: "GRAME (faustide example)",
+  description: newEntry.description,
+  version: "1.0.0",
+  apiVersion: "2.0.0",
+  thumbnail: "",
+  keywords: newEntry.keywords,
+  isInstrument: true,
+  hasMidiInput: true,
+  hasMidiOutput: false,
+  hasAudioInput: false,
+  hasAudioOutput: true,
+  website: newEntry.website,
+}, null, 2));
+
 console.log("Done. Reload the app (http://localhost:8080) and pick it from the dropdown.");

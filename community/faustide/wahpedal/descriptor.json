@@ -1,0 +1,20 @@
+{
+  "identifier": "org.grame.faustide.wahpedal",
+  "name": "wahPedal",
+  "vendor": "GRAME (faustide example)",
+  "description": "Demonstrate the Fourth-Order Wah pedal (similar to the Moog VCF)",
+  "version": "1.0.0",
+  "apiVersion": "2.0.0",
+  "thumbnail": "",
+  "keywords": [
+    "faust",
+    "faustide",
+    "filtering"
+  ],
+  "isInstrument": false,
+  "hasMidiInput": true,
+  "hasMidiOutput": false,
+  "hasAudioInput": true,
+  "hasAudioOutput": true,
+  "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/filtering"
+}
