@@ -114,6 +114,18 @@ const processor = (moduleId, paramsConfig) => {
 			/** @type {(event: WamEvent) => any} */
 			this.handleEvent = null;
 
+			// Faust's own generic keyOn/keyOff only drives params carrying explicit
+			// [midi:key]/[midi:keyon]/[midi:keyoff] metadata tags. Many faustide
+			// physical-model examples (e.g. violin_ui_MIDI, clarinet_ui_MIDI) rely
+			// instead on the plain freq/gain/gate naming convention that Faust's own
+			// polyphonic voice engine (FaustWebAudioDspVoice.extractPaths) supports —
+			// we're on the mono engine, so replicate that convention here directly
+			// against the same paramsValues this processor already outputs as real
+			// AudioParam automation (same path setParamValue/GUI writes use).
+			this.midiFreqPaths = Object.keys(paramsConfig).filter((p) => p.endsWith('/freq'));
+			this.midiGainPaths = Object.keys(paramsConfig).filter((p) => p.endsWith('/gain'));
+			this.midiGatePaths = Object.keys(paramsConfig).filter((p) => p.endsWith('/gate'));
+
 			audioWorkletGlobalScope.webAudioModules.addWam(this);
 			if (!ModuleScope.paramMgrProcessors) ModuleScope.paramMgrProcessors = {};
 			ModuleScope.paramMgrProcessors[this.instanceId] = this;
@@ -224,6 +236,33 @@ const processor = (moduleId, paramsConfig) => {
 			this.eventQueue = [];
 		}
 
+		/**
+		 * Drives freq/gain/gate params by Faust's naming convention (same one
+		 * FaustWebAudioDspVoice.extractPaths/keyOn uses on the poly engine) so
+		 * MIDI note-on/off works even when the DSP has no explicit
+		 * [midi:key]/[midi:keyon]/[midi:keyoff] tags. Routed through the real
+		 * main-thread setParamValue (same call the GUI itself uses), not a
+		 * local cache write -- this.paramsValues gets overwritten from the
+		 * connected AudioParam every process() block otherwise.
+		 * @param {Uint8Array} bytes
+		 */
+		handleMidiConvention(bytes) {
+			const cmd = bytes[0] >> 4;
+			const data1 = bytes[1];
+			const data2 = bytes[2];
+			const noteOn = cmd === 9 && data2 > 0;
+			const noteOff = cmd === 8 || (cmd === 9 && data2 === 0);
+			if (!noteOn && !noteOff) return;
+			if (noteOn) {
+				const freqHz = 440 * (2 ** ((data1 - 69) / 12));
+				this.midiFreqPaths.forEach((path) => this.call('setParamValue', path, freqHz));
+				this.midiGainPaths.forEach((path) => this.call('setParamValue', path, data2 / 127));
+				this.midiGatePaths.forEach((path) => this.call('setParamValue', path, 1));
+			} else {
+				this.midiGatePaths.forEach((path) => this.call('setParamValue', path, 0));
+			}
+		}
+
 		lock() {
 			if (globalThis.Atomics) Atomics.store(this.$lock, 0, 1);
 		}
@@ -280,6 +319,7 @@ const processor = (moduleId, paramsConfig) => {
 			for ($event = 0; $event < this.eventQueue.length; $event++) {
 				const event = this.eventQueue[$event];
 				if (event.time && event.time > currentTime) break;
+				if (event.type === 'wam-midi') this.handleMidiConvention(event.data.bytes);
 				if (typeof this.handleEvent === 'function') this.handleEvent(event);
 				this.call('dispatchWamEvent', event);
 			}

@@ -4144,5 +4144,40 @@
     ],
     "thumbnail": "",
     "path": "faustide/wfs/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simpleorganmidi",
+    "name": "SimpleOrganMIDI",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom",
+    "description": "Minimal MIDI-controllable sine organ voice with no visible gate widget.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "custom"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simpleorganmidi/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.simplepolysynth",
+    "name": "SimplePolySynth",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom",
+    "description": "Minimal polyphonic sine synth (freq/gain/gate voice convention, nvoices:8) to test the poly WAM pipeline.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "poly",
+      "custom"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/simplepolysynth/index.js"
   }
 ]

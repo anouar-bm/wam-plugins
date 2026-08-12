@@ -66,6 +66,7 @@
     <div id="controls" hidden>
       <div id="hint"></div>
       <div id="fileRow"></div>
+      <div id="midiStatus" style="font-size:12px;color:var(--muted);margin-bottom:6px;"></div>
       <div id="piano" hidden></div>
     </div>
     <div id="gui"></div>
@@ -167,6 +168,48 @@
       return pianoInstance;
     }
 
+    // Real hardware MIDI keyboard (Web MIDI API), forwarded straight into whatever
+    // instrument is currently loaded via the standard host->WAM scheduleEvents path —
+    // independent of the on-screen piano above, both can drive the instrument at once.
+    const midiStatus = document.getElementById("midiStatus");
+    let hardwareMidiRequested = false;
+    function forwardHardwareMidi(bytes) {
+      if (!currentInstance || !audioContext) return;
+      currentInstance.audioNode.scheduleEvents({
+        type: "wam-midi",
+        time: audioContext.currentTime,
+        data: { bytes },
+      });
+    }
+    async function initHardwareMidi() {
+      if (hardwareMidiRequested) return;
+      hardwareMidiRequested = true;
+      if (!navigator.requestMIDIAccess) {
+        midiStatus.textContent = "Hardware MIDI: not supported by this browser.";
+        return;
+      }
+      try {
+        const midiAccess = await navigator.requestMIDIAccess();
+        const wireInput = (input) => {
+          input.onmidimessage = (e) => forwardHardwareMidi(e.data);
+        };
+        const updateStatus = () => {
+          const names = Array.from(midiAccess.inputs.values()).map(i => i.name);
+          midiStatus.textContent = names.length
+            ? `Hardware MIDI: ${names.join(", ")}`
+            : "Hardware MIDI: no input devices connected.";
+        };
+        midiAccess.inputs.forEach(wireInput);
+        updateStatus();
+        midiAccess.onstatechange = () => {
+          midiAccess.inputs.forEach(wireInput);
+          updateStatus();
+        };
+      } catch (err) {
+        midiStatus.textContent = "Hardware MIDI: access denied (" + (err?.message || err) + ").";
+      }
+    }
+
     async function load(p, el) {
       document.querySelectorAll(".item.active").forEach(n => n.classList.remove("active"));
       el.classList.add("active");
@@ -184,6 +227,7 @@
       try {
         await ensureHost();
         if (audioContext.state === "suspended") await audioContext.resume();
+        initHardwareMidi();
 
         let instance = instanceCache.get(p.path);
         if (!instance) {

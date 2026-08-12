@@ -4,7 +4,7 @@
 
 ## Plugins
 
-Browse and test all 59 plugins live at [anouar-bm.github.io/wam-plugins](https://anouar-bm.github.io/wam-plugins/).
+Browse and test all 231 plugins live at [anouar-bm.github.io/wam-plugins](https://anouar-bm.github.io/wam-plugins/).
 
 ### Featured
 
@@ -78,6 +78,10 @@ Mirrored build output of [boourns/wam-community](https://github.com/boourns/wam-
 | ThruZeroFlanger | [`wimmics/ThruZeroFlanger/index.js`](https://anouar-bm.github.io/wam-plugins/community/wimmics/ThruZeroFlanger/index.js) | [screenshot](https://anouar-bm.github.io/wam-plugins/community/wimmics/ThruZeroFlanger/default.png) |
 | Vox Amp 30 | [`wimmics/GuitarAmpSim60s/index.js`](https://anouar-bm.github.io/wam-plugins/community/wimmics/GuitarAmpSim60s/index.js) | [screenshot](https://anouar-bm.github.io/wam-plugins/community/wimmics/GuitarAmpSim60s/screenshot.png) |
 | WeirdPhaser | [`wimmics/WeirdPhaser/index.js`](https://anouar-bm.github.io/wam-plugins/community/wimmics/WeirdPhaser/index.js) | [screenshot](https://anouar-bm.github.io/wam-plugins/community/wimmics/WeirdPhaser/default.png) |
+
+### Faustide (172)
+
+Real Faust DSP examples from [GRAME/faustide](https://github.com/grame-cncm/faustide), each compiled to wasm and wrapped as a WAM2 module with the actual [`@shren/faust-ui`](https://github.com/shreeve/faust-ui) widget GUI and a vendored [`@webaudiomodules/sdk-parammgr`](https://github.com/webaudiomodules/sdk) so MIDI/automation routes through a real WAM host (`otherPlugin.audioNode.connectEvents(...)`), under [`community/faustide/`](community/faustide/). Built with `scripts/build-all-faustide-examples.mjs`; see `scripts/template/entry.ts` for the WAM2 wrapper.
 
 Full index with names, categories, and paths: [`community/plugins.json`](https://anouar-bm.github.io/wam-plugins/community/plugins.json)
 
