@@ -4199,10 +4199,10 @@
   },
   {
     "identifier": "org.grame.faustide.churchorganmono",
-    "name": "Church Organ (Mono)",
+    "name": "Church Organ (Mono, no MIDI response by design)",
     "vendor": "GRAME (faustide example)",
     "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom",
-    "description": "Faust example (custom/churchOrgan.dsp), compiled via faustwasm to a WAM2 module.",
+    "description": "Faust example (custom/churchOrgan.dsp), compiled via faustwasm to a WAM2 module. Silent on MIDI note-on by design: FaustMonoDspGenerator's compiled node has no generic freq/gain/gate binding (that mechanism lives only in FaustPolyDspGenerator's FaustWebAudioDspVoice.extractPaths) and this DSP has no [midi:key N] tags. See church-organ-mono-tagged for the fixed-single-note-trigger variant, or church-organ-poly1 for real any-note playing.",
     "keywords": [
       "faust",
       "faustide",
@@ -4231,5 +4231,22 @@
     ],
     "thumbnail": "",
     "path": "faustide/church-organ-poly1/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.churchorganmonotagged",
+    "name": "Church Organ (Mono, note 60 only)",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom",
+    "description": "Faust example (custom/churchOrganMonoMidiTagged.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "custom"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/church-organ-mono-tagged/index.js"
   }
 ]
