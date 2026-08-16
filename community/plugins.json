@@ -4196,5 +4196,40 @@
     ],
     "thumbnail": "",
     "path": "faustide/guitareffectchain/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.churchorganmono",
+    "name": "Church Organ (Mono)",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom",
+    "description": "Faust example (custom/churchOrgan.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "custom"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/church-organ-mono/index.js"
+  },
+  {
+    "identifier": "org.grame.faustide.churchorganpoly1",
+    "name": "Church Organ (Poly 1)",
+    "vendor": "GRAME (faustide example)",
+    "website": "https://github.com/grame-cncm/faustide/tree/master/src/static/examples/custom",
+    "description": "Faust poly example (custom/churchOrganPoly1.dsp), compiled via faustwasm to a WAM2 module.",
+    "keywords": [
+      "faust",
+      "faustide",
+      "poly",
+      "custom"
+    ],
+    "category": [
+      "Instrument"
+    ],
+    "thumbnail": "",
+    "path": "faustide/church-organ-poly1/index.js"
   }
 ]
